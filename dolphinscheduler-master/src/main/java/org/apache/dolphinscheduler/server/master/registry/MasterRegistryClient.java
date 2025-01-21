@@ -103,7 +103,7 @@ public class MasterRegistryClient implements AutoCloseable {
 
         // remove before persist
         registryClient.remove(masterRegistryPath);
-        registryClient.persistEphemeral(masterRegistryPath, JSONUtils.toJsonString(masterHeartBeatTask.getHeartBeat()));
+        registryClient.persist(masterRegistryPath, JSONUtils.toJsonString(masterHeartBeatTask.getHeartBeat()));
 
         while (!registryClient.checkNodeExists(NetUtils.getHost(), RegistryNodeType.MASTER)) {
             log.warn("The current master server node:{} cannot find in registry", NetUtils.getHost());

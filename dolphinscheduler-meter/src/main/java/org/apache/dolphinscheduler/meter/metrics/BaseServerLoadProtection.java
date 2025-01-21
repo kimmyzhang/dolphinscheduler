@@ -36,32 +36,32 @@ public class BaseServerLoadProtection implements ServerLoadProtection {
 
     @Override
     public boolean isOverload(SystemMetrics systemMetrics) {
-        if (!enabled) {
-            return false;
-        }
-        if (systemMetrics.getSystemCpuUsagePercentage() > maxSystemCpuUsagePercentageThresholds) {
-            log.info(
-                    "OverLoad: the system cpu usage: {} is over then the maxSystemCpuUsagePercentageThresholds {}",
-                    systemMetrics.getSystemCpuUsagePercentage(), maxSystemCpuUsagePercentageThresholds);
-            return true;
-        }
-        if (systemMetrics.getJvmCpuUsagePercentage() > maxJvmCpuUsagePercentageThresholds) {
-            log.info(
-                    "OverLoad: the jvm cpu usage: {} is over then the maxJvmCpuUsagePercentageThresholds {}",
-                    systemMetrics.getJvmCpuUsagePercentage(), maxJvmCpuUsagePercentageThresholds);
-            return true;
-        }
-        if (systemMetrics.getDiskUsedPercentage() > maxDiskUsagePercentageThresholds) {
-            log.info("OverLoad: the DiskUsedPercentage: {} is over then the maxDiskUsagePercentageThresholds {}",
-                    systemMetrics.getDiskUsedPercentage(), maxDiskUsagePercentageThresholds);
-            return true;
-        }
-        if (systemMetrics.getSystemMemoryUsedPercentage() > maxSystemMemoryUsagePercentageThresholds) {
-            log.info(
-                    "OverLoad: the SystemMemoryUsedPercentage: {} is over then the maxSystemMemoryUsagePercentageThresholds {}",
-                    systemMetrics.getSystemMemoryUsedPercentage(), maxSystemMemoryUsagePercentageThresholds);
-            return true;
-        }
+//        if (!enabled) {
+//            return false;
+//        }
+//        if (systemMetrics.getSystemCpuUsagePercentage() > maxSystemCpuUsagePercentageThresholds) {
+//            log.info(
+//                    "OverLoad: the system cpu usage: {} is over then the maxSystemCpuUsagePercentageThresholds {}",
+//                    systemMetrics.getSystemCpuUsagePercentage(), maxSystemCpuUsagePercentageThresholds);
+//            return true;
+//        }
+//        if (systemMetrics.getJvmCpuUsagePercentage() > maxJvmCpuUsagePercentageThresholds) {
+//            log.info(
+//                    "OverLoad: the jvm cpu usage: {} is over then the maxJvmCpuUsagePercentageThresholds {}",
+//                    systemMetrics.getJvmCpuUsagePercentage(), maxJvmCpuUsagePercentageThresholds);
+//            return true;
+//        }
+//        if (systemMetrics.getDiskUsedPercentage() > maxDiskUsagePercentageThresholds) {
+//            log.info("OverLoad: the DiskUsedPercentage: {} is over then the maxDiskUsagePercentageThresholds {}",
+//                    systemMetrics.getDiskUsedPercentage(), maxDiskUsagePercentageThresholds);
+//            return true;
+//        }
+//        if (systemMetrics.getSystemMemoryUsedPercentage() > maxSystemMemoryUsagePercentageThresholds) {
+//            log.info(
+//                    "OverLoad: the SystemMemoryUsedPercentage: {} is over then the maxSystemMemoryUsagePercentageThresholds {}",
+//                    systemMetrics.getSystemMemoryUsedPercentage(), maxSystemMemoryUsagePercentageThresholds);
+//            return true;
+//        }
         return false;
     }
 }

@@ -85,7 +85,7 @@ public class AlertHeartbeatTask extends BaseHeartBeatTask<AlertServerHeartBeat> 
     @Override
     public void writeHeartBeat(AlertServerHeartBeat heartBeat) {
         String heartBeatJson = JSONUtils.toJsonString(heartBeat);
-        registryClient.persistEphemeral(heartBeatPath, heartBeatJson);
+        registryClient.persist(heartBeatPath, heartBeatJson);
         AlertServerMetrics.incAlertHeartbeatCount();
         log.debug("Success write alert heartBeatInfo into registry, alertRegistryPath: {}, heartBeatInfo: {}",
                 heartBeatPath, heartBeatJson);

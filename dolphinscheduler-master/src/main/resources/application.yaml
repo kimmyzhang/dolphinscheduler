@@ -16,17 +16,17 @@
 #
 spring:
   profiles:
-    active: postgresql
+    active: mysql
   banner:
     charset: UTF-8
   jackson:
     time-zone: UTC
     date-format: "yyyy-MM-dd HH:mm:ss"
   datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://127.0.0.1:5432/dolphinscheduler
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3303/dolphinscheduler3?useUnicode=true&characterEncoding=UTF-8
     username: root
-    password: root
+    password: 123456
     hikari:
       connection-test-query: select 1
       pool-name: DolphinScheduler
@@ -71,7 +71,7 @@ mybatis-plus:
 registry:
   type: zookeeper
   zookeeper:
-    namespace: dolphinscheduler
+    namespace: dolphinscheduler3
     connect-string: localhost:2181
     retry-policy:
       base-sleep-time: 1s
@@ -83,7 +83,7 @@ registry:
     digest: ~
 
 master:
-  listen-port: 5678
+  listen-port: 5656
   # The number of workflow event bus fire worker used to fire the workflow event, default is 2*CPU core + 1.
   #  workflow-event-bus-fire-thread-count: 10
   # logic-task-config:
@@ -151,9 +151,9 @@ spring:
       on-profile: mysql
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/dolphinscheduler
+    url: jdbc:mysql://127.0.0.1:3303/dolphinscheduler3?useUnicode=true&characterEncoding=UTF-8
     username: root
-    password: root
+    password: 123456
   quartz:
     properties:
       org.quartz.jobStore.driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate

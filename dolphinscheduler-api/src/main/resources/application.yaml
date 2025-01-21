@@ -32,7 +32,7 @@ server:
 
 spring:
   profiles:
-    active: postgresql
+    active: mysql
   banner:
     charset: UTF-8
   jackson:
@@ -45,10 +45,10 @@ spring:
   messages:
     basename: i18n/messages
   datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://127.0.0.1:5432/dolphinscheduler
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3303/dolphinscheduler3?useUnicode=true&characterEncoding=UTF-8
     username: root
-    password: root
+    password: 123456
     hikari:
       connection-test-query: select 1
       pool-name: DolphinScheduler
@@ -117,7 +117,7 @@ management:
 registry:
   type: zookeeper
   zookeeper:
-    namespace: dolphinscheduler
+    namespace: dolphinscheduler3
     connect-string: localhost:2181
     retry-policy:
       base-sleep-time: 1s
@@ -243,9 +243,9 @@ spring:
       on-profile: mysql
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/dolphinscheduler
+    url: jdbc:mysql://127.0.0.1:3303/dolphinscheduler3?useUnicode=true&characterEncoding=UTF-8
     username: root
-    password: root
+    password: 123456
   quartz:
     properties:
       org.quartz.jobStore.driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate

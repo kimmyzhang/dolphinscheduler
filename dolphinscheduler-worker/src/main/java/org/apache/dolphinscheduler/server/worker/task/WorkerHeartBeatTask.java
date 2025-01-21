@@ -97,7 +97,7 @@ public class WorkerHeartBeatTask extends BaseHeartBeatTask<WorkerHeartBeat> {
         }
         String workerHeartBeatJson = JSONUtils.toJsonString(workerHeartBeat);
         String workerRegistryPath = workerConfig.getWorkerRegistryPath();
-        registryClient.persistEphemeral(workerRegistryPath, workerHeartBeatJson);
+        registryClient.persist(workerRegistryPath, workerHeartBeatJson);
         WorkerServerMetrics.incWorkerHeartbeatCount();
         log.debug(
                 "Success write worker group heartBeatInfo into registry, workerRegistryPath: {} workerHeartBeatInfo: {}",

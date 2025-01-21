@@ -28,7 +28,7 @@ spring:
 registry:
   type: zookeeper
   zookeeper:
-    namespace: dolphinscheduler
+    namespace: dolphinscheduler3
     connect-string: localhost:2181
     retry-policy:
       base-sleep-time: 1s
@@ -41,7 +41,7 @@ registry:
 
 worker:
   # worker listener port
-  listen-port: 1234
+  listen-port: 1212
   # worker heartbeat interval
   max-heartbeat-interval: 10s
   # worker host weight to dispatch tasks, default value 100
